@@ -76,6 +76,6 @@ class DataBaseCompany:
     def get_DBPATH(self):
         return os.path.abspath(os.path.dirname(sys.argv[0]))+'/database_company.sqlite'
 
-##....
+##....init test
 # sqlalchemy_example.db file.
 
