@@ -77,5 +77,6 @@ class DataBaseCompany:
         return os.path.abspath(os.path.dirname(sys.argv[0]))+'/database_company.sqlite'
 
 ##....init test
+## last pusth test...
 # sqlalchemy_example.db file.
 
