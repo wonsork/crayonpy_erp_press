@@ -14,7 +14,7 @@ OPTIONS = {
 # APP = ['appmain/Company.py']
 # APP=['crayon/aranduka.py']
 #kws...
-
+#init test...
 #
 APP=['company/AppMainComp.py']
 setup(
