@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 import py2app
-
+#init for 
 OPTIONS = {
     'argv_emulation':False,
     'includes':[
