@@ -11,11 +11,13 @@ OPTIONS = {
                 "sip",
                 ]
 }
+
+########
 # APP = ['appmain/Company.py']
 # APP=['crayon/aranduka.py']
 #kws...
 #init test...
-#
+#GITTEST push 3
 APP=['company/AppMainComp.py']
 setup(
     name='CRPRERP',
