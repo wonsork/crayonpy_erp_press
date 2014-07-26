@@ -83,9 +83,8 @@ DB_PATH=os.path.abspath(os.path.dirname(sys.argv[0]))+'/database_company.sqlite'
 class DataBaseCompany:
 
     def onCreate(self):
-        # engine = create_engine('sqlite:///'+DB_PATH)
+        self.engine = create_engine('sqlite:///'+DB_PATH)
         print "---engine to ", self.engine
-
         Base.metadata.create_all(self.engine)
 
         print Base.metadata.tables.keys()
