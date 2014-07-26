@@ -19,7 +19,7 @@ from UI.UIWidgetCustomInfo import Ui_FormCustomers
 
 
 
-
+# 고객정보를 저장하고 그목록을 볼  수 있다.
 class CCCustomerInfo(QMainWindow, Ui_FormCustomers):
     """
     Class documentation goes here.
