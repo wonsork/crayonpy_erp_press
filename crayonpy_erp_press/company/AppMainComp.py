@@ -1,14 +1,14 @@
 __author__ = 'kafka'
 
-
-
 import sys
+
 from PyQt4.QtGui import QMainWindow, QApplication
 from PyQt4.QtCore import pyqtSignature
-from PyQt4 import  QtGui,QtCore
+from PyQt4 import  QtGui
 
-from UIAppMainCompany import Ui_MainWindow
+from company.UI.UIAppMainCompany import Ui_MainWindow
 from CCompanyInfo import CCompanyInfo
+
 # from main import MainView
 # from queue import Queue
 

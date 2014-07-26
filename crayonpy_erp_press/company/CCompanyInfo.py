@@ -3,10 +3,8 @@ __author__ = 'kafka'
 
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from PyQt4.QtGui import QMainWindow
 from PyQt4 import QtCore
 from PyQt4.QtGui import *
-from PyQt4.QtCore import *
 from PyQt4 import QtSql, QtGui
 
 
@@ -16,7 +14,7 @@ from PyQt4 import QtSql, QtGui
 
 
 from database.DatabasePub import TBCompany,TBUser,DataBaseCompany
-from UIFormCompanyInfo import Ui_FormCompanyInfo
+from company.UI.UIFormCompanyInfo import Ui_FormCompanyInfo
 
 
 try:

@@ -9,7 +9,8 @@ from sqlalchemy import Column, ForeignKey, Integer, String,BOOLEAN,Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
-
+from sqlalchemy.ext.declarative import declared_attr
+from sqlalchemy.ext.declarative import has_inherited_table
 Base = declarative_base()
 
 class Person(Base):
@@ -44,6 +45,22 @@ class TBCompany(Base):
     bizPhone= Column(String(20))
     bizEmail=Column(String(50))
     bizActivity=Column(Boolean(False))
+    __mapper_args__ = {'polymorphic_on': bizName}
+
+# customer infomation...
+class TBCustomer(TBCompany):
+    __mapper_args__ = {'polymorphic_identity': 'tbcustomer'}
+    # id=Column(Integer,primary_key=True)
+    # bizName=Column(String(),nullable=False)   #상호
+    # bizCode=Column(String(10),nullable=False,unique=True) #사업자번호
+    # bizBossName=Column(String(20))
+    # bizType=Column(String(100)) #업태
+    # bizKind=Column(String(100)) #업종
+    # bizAddr = Column(String(200))
+    # bizTel = Column(String(20))
+    # bizPhone= Column(String(20))
+    # bizEmail=Column(String(50))
+    # bizActivity=Column(Boolean(False))
 
 class TBUser(Base):
     __tablename__="tbuser"
@@ -58,26 +75,34 @@ class TBUser(Base):
     companykey = Column(Integer,ForeignKey('tbcompany.id'))
 
 
+
+
 DB_PATH=os.path.abspath(os.path.dirname(sys.argv[0]))+'/database_company.sqlite'
 
 # Create an engine that stores data in the local director
 class DataBaseCompany:
 
     def onCreate(self):
-
-        engine = create_engine('sqlite:///'+DB_PATH)
         # engine = create_engine('sqlite:///'+DB_PATH)
-        print "---engine to ", engine
+        print "---engine to ", self.engine
 
-        Base.metadata.create_all(engine)
+        Base.metadata.create_all(self.engine)
 
-        return engine
+        print Base.metadata.tables.keys()
+        return self.engine
 
     def get_DBPATH(self):
         return os.path.abspath(os.path.dirname(sys.argv[0]))+'/database_company.sqlite'
 
-####
+    def doShowTables(self):
+        pass
+        # Base.metadata.reflect(self.engine)
+
+        # if self.engine != None:
+
 ##....init test
 ## last pusth test...
 # sqlalchemy_example.db file.
-
+if __name__ == "__main__":
+    db = DataBaseCompany()
+    db.onCreate()
